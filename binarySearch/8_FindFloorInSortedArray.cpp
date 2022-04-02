@@ -8,7 +8,7 @@ int floorOfElement(std::vector<int>& nums, int elem) {
     while (start <= end) {
         int mid = start + (end - start) / 2;
         if (nums[mid] == elem) {
-            return mid;
+            return nums[mid];
         }
         if (nums[mid] < elem) {
             res = nums[mid];
