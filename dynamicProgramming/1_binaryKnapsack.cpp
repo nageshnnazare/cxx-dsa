@@ -3,7 +3,6 @@
 #include <cstring>
 
 int mem[100][100]; // >= mem[n+1][W+1]
-int t[100][100]; // >= t[n+1][W+1]
 
 // Memoization
 int knapsack_mem(std::vector<int> wt, std::vector<int> val, int W, int n) {
@@ -28,6 +27,7 @@ int knapsack_mem(std::vector<int> wt, std::vector<int> val, int W, int n) {
 
 // Top-down Approach
 int knapsack_td(std::vector<int> wt, std::vector<int> val, int W, int n) {
+    int t[n + 1][W + 1];
     for (int i = 0; i < n + 1; i++) {
         for (int j = 0; j < W + 1; j++) {
             if (i == 0 || j == 0) {
