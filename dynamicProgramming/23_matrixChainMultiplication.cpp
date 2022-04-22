@@ -13,12 +13,12 @@ int solveMCM(std::vector<int> nums, int i, int j) {
         return t[i][j];
     }
 
-    static int ans = INT32_MAX;
+    int ans = INT32_MAX;
 
     for (int k = i; k <= j - 1; k++) {
         int temp = solveMCM(nums, i, k)
             + solveMCM(nums, k + 1, j)
-            + (nums[i] * nums[k] * nums[j]);
+            + (nums[i - 1] * nums[k] * nums[j]);
         ans = std::min(ans, temp);
     }
     return t[i][j] = ans;
