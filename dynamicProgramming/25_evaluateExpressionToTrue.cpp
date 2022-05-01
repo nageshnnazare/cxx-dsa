@@ -1,23 +1,32 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <unordered_map>
 
-int mem[100][100];
+std::unordered_map<std::string, int> umap;
 
 int numWayToEvalToTrue(std::string str, int i, int j, bool isTrue) {
+    std::string key = std::to_string(i) + " "
+        + std::to_string(j) + " "
+        + (isTrue ? "T" : "F");
+
+    if (umap.find(key) != umap.end()) {
+        return umap[key];
+    }
 
     if (i >= j) {
         if (isTrue == true) {
-            return str[i] == 'T';
+            umap[key] = str[i] == 'T';
         }
         else {
-            return str[i] == 'F';
+            umap[key] = str[i] == 'F';
         }
+        return umap[key];
     }
 
     int ans = 0;
 
-    for (int k = i + 1; k <= j - 1; k=k + 2) {
+    for (int k = i + 1; k <= j - 1; k = k + 2) {
         int leftTrue, rightTrue, leftFalse, rightFalse;
         leftTrue = numWayToEvalToTrue(str, i, k - 1, true);
         leftFalse = numWayToEvalToTrue(str, i, k - 1, false);
@@ -55,7 +64,7 @@ int numWayToEvalToTrue(std::string str, int i, int j, bool isTrue) {
             }
         }
     }
-    return ans;
+    return umap[key] = ans;
 }
 
 int main(int argc, char const* argv[]) {
@@ -65,7 +74,7 @@ int main(int argc, char const* argv[]) {
     std::cout << "\nInput : "
         << str << " ";
 
-    memset(mem, -1, sizeof(mem));
+    umap.clear();
 
     int output_td = numWayToEvalToTrue(str, 0, str.length() - 1, true);
 
