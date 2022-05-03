@@ -9,22 +9,39 @@ struct ListNode {
     ListNode(int x, ListNode* next) : val(x), next(next) {};
 };
 
+ListNode* reverseNodesK(ListNode* head, int k) {
+    if (head == nullptr || k == 1) return head;
+    ListNode* temp = new ListNode();
+    temp->next = head;
 
-ListNode* middleOfList(ListNode* head) {
-    if (head == nullptr) return nullptr;
-    ListNode* fast = head;
-    ListNode* slow = head;
+    ListNode* curr = temp, * pre = temp, * nex = temp;
+    int count = 0;
 
-    while (fast->next && fast->next->next) {
-        slow = slow->next;
-        fast = fast->next->next;
+    while (curr->next) {
+        curr = curr->next;
+        count++;
     }
 
-    return slow;
+    while (count >= k) {
+        curr = pre->next;
+        nex = curr->next;
+
+        for (int i = 1; i < k; i++) {
+            curr->next = nex->next;
+            nex->next = pre->next;
+            pre->next = nex;
+            nex = curr->next;
+        }
+        pre = curr;
+        count -= k;
+    }
+    return temp->next;
 }
 
 int main(int argc, char const* argv[]) {
-    ListNode node5(5);
+    ListNode node7(7);
+    ListNode node6(6, &node7);
+    ListNode node5(5, &node6);
     ListNode node4(4, &node5);
     ListNode node3(3, &node4);
     ListNode node2(2, &node3);
@@ -42,7 +59,8 @@ int main(int argc, char const* argv[]) {
         std::cout << std::endl;
     }
 
-    ListNode* res = middleOfList(head);
+    ListNode* res = reverseNodesK(head, 3);
+
     {
         ListNode* temp = res;
         std::cout << "Solution List : ";
@@ -52,5 +70,6 @@ int main(int argc, char const* argv[]) {
         }
         std::cout << std::endl;
     }
+
     return 0;
 }

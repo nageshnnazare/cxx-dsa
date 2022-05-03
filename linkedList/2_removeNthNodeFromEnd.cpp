@@ -11,6 +11,7 @@ struct ListNode {
 
 
 ListNode* removeNthNodeFromEnd(ListNode* head, int n) {
+    if (head == nullptr) return nullptr;
     ListNode* fast = head;
     ListNode* slow = head;
 

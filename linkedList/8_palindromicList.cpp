@@ -9,9 +9,20 @@ struct ListNode {
     ListNode(int x, ListNode* next) : val(x), next(next) {};
 };
 
-
-ListNode* middleOfList(ListNode* head) {
+ListNode* reverseList(ListNode* head) {
     if (head == nullptr) return nullptr;
+    ListNode* newHead = nullptr;
+    while (head) {
+        ListNode* next = head->next;
+        head->next = newHead;
+        newHead = head;
+        head = next;
+    }
+    return newHead;
+}
+
+bool palindromicList(ListNode* head) {
+    if (head == nullptr || head->next == nullptr) return true;
     ListNode* fast = head;
     ListNode* slow = head;
 
@@ -19,12 +30,23 @@ ListNode* middleOfList(ListNode* head) {
         slow = slow->next;
         fast = fast->next->next;
     }
+    slow->next = reverseList(slow->next);
+    slow = slow->next;
 
-    return slow;
+    while (slow) {
+        if (head->val != slow->val) {
+            return false;
+        }
+        head = head->next;
+        slow = slow->next;
+    }
+    return true;
 }
 
 int main(int argc, char const* argv[]) {
-    ListNode node5(5);
+    ListNode node7(1);
+    ListNode node6(2, &node7);
+    ListNode node5(3, &node6);
     ListNode node4(4, &node5);
     ListNode node3(3, &node4);
     ListNode node2(2, &node3);
@@ -42,15 +64,8 @@ int main(int argc, char const* argv[]) {
         std::cout << std::endl;
     }
 
-    ListNode* res = middleOfList(head);
-    {
-        ListNode* temp = res;
-        std::cout << "Solution List : ";
-        while (temp) {
-            std::cout << temp->val << " ";
-            temp = temp->next;
-        }
-        std::cout << std::endl;
-    }
+    bool res = palindromicList(head);
+    std::cout << "Result : " << std::boolalpha << res << std::endl;
+
     return 0;
 }
