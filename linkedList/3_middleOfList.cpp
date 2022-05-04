@@ -15,7 +15,7 @@ ListNode* middleOfList(ListNode* head) {
     ListNode* fast = head;
     ListNode* slow = head;
 
-    while (fast->next && fast->next->next) {
+    while (fast && fast->next) {
         slow = slow->next;
         fast = fast->next->next;
     }
