@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.13) 
+project(cxx_arrays)             
+set(CMAKE_CXX_STANDARD 14)   
+
+add_executable(1_binarySearch 1_binarySearch.cpp)
+add_executable(2_SearchInReverseSortedArray 2_SearchInReverseSortedArray.cpp)
+add_executable(3_OrderNotKnownSearch 3_OrderNotKnownSearch.cpp)
+add_executable(4_FirstAndLastOccurance 4_FirstAndLastOccurance.cpp)
+add_executable(5_CountOfElement 5_CountOfElement.cpp)
+add_executable(6_RotatedCount 6_RotatedCount.cpp)
+
+add_executable(7_SearchInSortedRotatedArray 7_SearchInSortedRotatedArray.cpp)
+add_executable(8_FindFloorInSortedArray 8_FindFloorInSortedArray.cpp)
+add_executable(9_FindCeilInSortedArray 9_FindCeilInSortedArray.cpp)
+add_executable(10_NextAlphabet 10_NextAlphabet.cpp)
+add_executable(11_First1BinarySortedArray 11_First1BinarySortedArray.cpp)
+add_executable(12_binarySearchInfiniteArray 12_binarySearchInfiniteArray.cpp)
+add_executable(13_MinDiffElement 13_MinDiffElement.cpp)
+
