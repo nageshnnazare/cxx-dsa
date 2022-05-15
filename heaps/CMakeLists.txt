@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.13) 
+project(cxx_heaps)             
+set(CMAKE_CXX_STANDARD 14)   
+
+add_executable(1_kthSmallestElement 1_kthSmallestElement.cpp)
+add_executable(2_kLargestElements 2_kLargestElements.cpp)
+add_executable(3_kSortedArray 3_kSortedArray.cpp)
+add_executable(4_kClosestNumber 4_kClosestNumber.cpp)
+add_executable(5_kFrequentNumber 5_kFrequentNumber.cpp)
+add_executable(6_FrequencySort 6_FrequencySort.cpp)
+add_executable(7_kClosestPointsToOrigin 7_kClosestPointsToOrigin.cpp)

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13) 
-project(cxx_arrays)             
+project(cxx_binary_search)             
 set(CMAKE_CXX_STANDARD 14)   
 
 add_executable(1_binarySearch 1_binarySearch.cpp)
@@ -16,4 +16,3 @@ add_executable(10_NextAlphabet 10_NextAlphabet.cpp)
 add_executable(11_First1BinarySortedArray 11_First1BinarySortedArray.cpp)
 add_executable(12_binarySearchInfiniteArray 12_binarySearchInfiniteArray.cpp)
 add_executable(13_MinDiffElement 13_MinDiffElement.cpp)
-
