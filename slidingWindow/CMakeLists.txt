@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.13) 
+project(cxx_sliding_window)             
+set(CMAKE_CXX_STANDARD 14)   
+
+add_executable(1_maxSumSubarray 1_maxSumSubarray.cpp)
+add_executable(2_firstNegNumInWindow 2_firstNegNumInWindow.cpp)
+add_executable(3_countOccurencesOfAnagram 3_countOccurencesOfAnagram.cpp)
+add_executable(4_maxElemOfSubarray 4_maxElemOfSubarray.cpp)
+add_executable(5_largestSubarrayOfSumK 5_largestSubarrayOfSumK.cpp)
+add_executable(6_longestSubstringUniqueChar 6_longestSubstringUniqueChar.cpp)
+add_executable(7_longestSubstringNoRepeatChar 7_longestSubstringNoRepeatChar.cpp)
+add_executable(8_pickingToys 8_pickingToys.cpp)
