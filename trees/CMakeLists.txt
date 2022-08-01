@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.13) 
+project(cxx_strings)             
+set(CMAKE_CXX_STANDARD 14)   
+
+add_executable(1_DFS_Traversal 1_DFS_Traversal.cpp)
+add_executable(2_BFS_Traversal 2_BFS_Traversal.cpp)
+add_executable(3_heightOfBinaryTree 3_heightOfBinaryTree.cpp)
+add_executable(4_checkIfTreeisBalanced 4_checkIfTreeisBalanced.cpp)
+add_executable(5_diameterOfBinaryTree 5_diameterOfBinaryTree.cpp)
+add_executable(6_maxPathSum 6_maxPathSum.cpp)
