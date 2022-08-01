@@ -37,3 +37,13 @@ int main(int argc, char const* argv[]) {
     std::cout << reverseWordsInString(st) << std::endl;
     return 0;
 }
+
+/*
+Output:
+
+Before reversing words:
+this is a code for reversing a string
+After reversing words:
+string a reversing for code a is this
+
+*/

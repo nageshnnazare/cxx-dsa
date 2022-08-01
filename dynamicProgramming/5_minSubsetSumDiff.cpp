@@ -40,7 +40,7 @@ int minSubsetSumDiff(std::vector<int> arr, int n) {
     int mn = INT32_MAX;
     int range = std::accumulate(arr.begin(), arr.end(), 0);
 
-    std::vector<int> v = subsetSum(arr, n, range);
+    std::vector<int> v = subsetSum(arr, range, n);
 
     for (int i = 0; i < v.size(); i++) {
         mn = std::min(mn, abs(range - 2 * arr[i]));
